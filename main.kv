@@ -1,0 +1,26 @@
+<Tab>:
+
+    ScrollView:
+        MDList:
+            OneLineListItem:
+                id: windspeed
+                text: ' Wind Speed: '                    
+            OneLineListItem:
+                id: maxgust
+                text: ' Gust: '
+            OneLineListItem:
+                id: direction
+                text: ' Direction: '
+            OneLineListItem:
+                id: tmstp
+                text: ' Last Update: '
+
+BoxLayout:
+    orientation: 'vertical'
+    MDToolbar:
+        title: 'Vancouver Wind'        
+        right_action_items: [['magnify', lambda x: app.search_menu.open()]]
+
+    MDTabs:
+        id:  tabs
+        on_tab_switch: app.on_tab_switch(*args)
